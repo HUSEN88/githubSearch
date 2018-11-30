@@ -1,0 +1,44 @@
+
+<form class="form-inline">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group pull-right">
+			  <label for="repo">Select language:</label>
+			    <select class="form-control width100" #language>
+			      <option>javascript</option>
+			      <option>ruby</option>
+			      <option>php</option>
+			      <option>jquery</option>
+			    </select>
+			</div>
+		</div>
+		<div class="col-md-6">
+  			<div class="form-group">
+  				<label for="repo">Enter repo name:</label>
+				<input type="text" id="reponame" class="form-control" #reponame ="ngModel" name="reponame" class="form-control width100"
+					placeholder="Enter repo name" [(ngModel)] = "repoName">  
+			</div>
+			<button type="button" (click) = "findRepo(reponame.value, language.value)" class="btn btn-primary repo-search"><i class="glyphicon glyphicon-search"></i></button>
+		</div>
+		
+	</div>
+</form>
+
+<div *ngIf="reponame.invalid && (reponame.dirty || reponame.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="reponame.errors.required">
+    Name is required.
+  </div>
+  <div *ngIf="reponame.errors.minlength">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="reponame.errors.forbiddenName">
+    Name cannot be Bob.
+  </div>
+
+</div>
+
+
+
+<app-repo-details [repoList]="repos" ></app-repo-details>

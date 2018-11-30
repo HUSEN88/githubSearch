@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+body{
+font-family: 'Oswald', sans-serif !important;
+}
+.heading{
+	color:#fff;
+	text-align: left;
+	padding:10px;
+	font-weight:900;
+font-family: 'Oswald', sans-serif !important;
+	font-size:30px;
+}
+
+p,h1,h2,h3,h4,h5,h6,span,div{
+	font-family: 'Oswald', sans-serif !important;
+  letter-spacing: 1px;
+
+}
+
+
+.navbar-default {
+    background-color:#394e80;
+    border-color: #e7e7e7;
+}
+
+
+
+.active:visited,.active:hover,.active,.active:focus{
+	color:#fff !important;
+}
+
+
+
+
