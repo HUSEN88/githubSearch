@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+body{
+font-family: 'Oswald', sans-serif !important;
+}
+p,h1,h2,h3,h4,h5,h6,span,div{
+	font-family: 'Oswald', sans-serif !important;
+  letter-spacing: 1px;
+
+}
+
+.repo-search{
+	margin-left:30px;
+}
+
+.form-inline{
+	margin-top: 50px;background:#eee;padding:20px
+}
+
+.form-inline label{
+	margin-right:30px;
+}

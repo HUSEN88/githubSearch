@@ -1,0 +1,116 @@
+
+
+	<div class="input-group" style="margin-top: 50px;background:#eee;padding:20px">
+		<input type="text" #username ="ngModel" name="username" class="form-control width100"
+			placeholder="Search git users with username" [(ngModel)] = "userName">
+		<span class="input-group-btn">
+			<button type="button" (click) = "findProfile(username.value)" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
+		</span>
+	</div>
+
+
+
+<div class="container">
+    <ng-template #message>
+    <h4 class="error">Profile with this username is not exist!!!</h4>
+    </ng-template>
+</div>
+
+
+
+
+        <div class="container main-secction"  style="margin-top:50px;" *ngIf = "profile;else message">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 image-section">
+                <img src="http://nicesnippets.com/demo/Nature-Night-Sky-Stars-Blurred-Light-Show-Mountains-WallpapersByte-com-1920x1080.jpg">
+            </div>
+            <div class="row user-left-part">
+                <div class="col-md-3 col-sm-3 col-xs-12 user-profil-part pull-left">
+                    <div class="row ">
+                        <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
+                            <img src="{{profile.avatar_url}}">
+                        </div>
+                        <div class="row user-detail-row" style="margin-top:50px;">
+                            <div class="col-md-12 col-sm-12 user-detail-section2 pull-left">
+                            <div class="border"></div>
+                                <h5>Followers <span class="badge badge-pill badge-primary pull-right">{{profile.followers}}</span></h5>
+                                
+                            </div>
+                            <div class="col-md-12 col-sm-12 user-detail-section2 pull-right">
+                                <div class="border"></div>
+                                <h5>Following <span class="badge badge-pill badge-success pull-right">{{profile.following}}</span></h5>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-12 user-detail-section2">
+                            <div class="border"></div>
+                            <h5>Public Repositories<span class="badge badge-pill badge-dark pull-right">{{profile.public_repos}}</span></h5>
+                            
+                        </div>
+                        <div class="col-md-12 user-detail-section2">
+                            <div class="border"></div>
+                            <h5>Public Gists <span class="badge pull-right">{{profile.public_gists}}</span></h5>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12 pull-right profile-right-section">
+                    <div class="row profile-right-section-row">
+                        <div class="col-md-12 profile-header">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-6 col-xs-12 profile-header-section1 pull-left">
+                                    <h1>{{profile.name}}</h1>
+                                    <p>{{profile.login}}</p>
+                                    <a href="emailto:{{profile.email}}">{{profile.email}}</a>
+                                    <p>{{profile.location}}</p>
+                                    <p>{{profile.bio}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <!-- <div class="col-md-8  profile-tag-section text-center">
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-3 profile-tag">
+                                            <a href="#"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></a>
+                                            <p>info</p>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 profile-tag">
+                                            <a href="#"><i class="fa fa-address-book" aria-hidden="true"></i></a>
+                                            <p>feed</p>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 profile-tag">
+                                            <a href="#"><i class="fa fa-id-card-o" aria-hidden="true"></i></a>
+                                            <p>Agenda</p>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 profile-tag">
+                                            <a href="#"><i class="fa fa-paperclip" aria-hidden="true"></i></a>
+                                            <p>Resume</p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-12 img-main-rightPart">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row image-right-part">
+                                                <div class="col-md-6 pull-left image-right-detail">
+                                                    <h3>Repositories</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 image-right-detail-section2">
+                                        	<div *ngFor ="let repo of repos">
+                                            <p class="clearfix">{{repo.name}} <br> {{repo.language}}<a href="{{repo.html_url}}" class="btn btn-sm btn-primary pull-right">View on github</a>
+												</p>
+												<p>{{repo.description}}</p><HR>
+											</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
